@@ -2,4 +2,15 @@
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
                    assembly="Domain"
                    namespace="Domain">
+
+  <class name="Individual" table="individu">
+    <id name="Id" column="indiv_id" type="int">
+      <generator class="native"></generator>
+    </id>
+    <property name="Login" column="indiv_login" not-null="true"/>
+    <property name="Password" column="indiv_mdp" not-null="true"/>
+    <property name="AdminRight" column="indiv_admin" not-null="true"/>
+
+  </class>  
+
 </hibernate-mapping>

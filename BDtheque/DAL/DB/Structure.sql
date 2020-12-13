@@ -1,13 +1,13 @@
-drop table if exists individu;
-drop table if exists album;
-drop table if exists BDsouhait;
 drop table if exists BDpossession;
+drop table if exists BDsouhait;
+drop table if exists album;
+drop table if exists individu;
 
 create table individu (
     indiv_id integer not null primary key auto_increment,
     indiv_login varchar(100) not null,
     indiv_mdp varchar(100) not null,
-	indiv_admin integer -- Booléen
+    indiv_admin tinyint(1)
 );
 
 create table album (

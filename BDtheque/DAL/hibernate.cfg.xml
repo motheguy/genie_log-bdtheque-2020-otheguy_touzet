@@ -10,8 +10,7 @@
       NHibernate.Driver.MySqlDataDriver
     </property>
     <property name="connection.connection_string">
-      <!--TO MODIFY TO MODIFY TO MODIFY TO MODIFY TO MODIFY TO MODIFY TO MODIFY-->
-      Server=localhost;Database=librairie;User ID=librairie_user;Password=secret;
+      Server=localhost;Database=bdtheque;User ID=bdtheque_user;Password=secret;
     </property>
     <property name="dialect">
       NHibernate.Dialect.MySQL5Dialect
