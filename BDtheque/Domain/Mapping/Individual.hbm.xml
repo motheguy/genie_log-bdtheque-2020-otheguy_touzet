@@ -3,14 +3,26 @@
                    assembly="Domain"
                    namespace="Domain">
 
-  <class name="Individual" table="individu">
+  <class name="Individual" table="individu" abstract="true">
     <id name="Id" column="indiv_id" type="int">
       <generator class="native"></generator>
     </id>
+    <discriminator column="indiv_admin" type="int"/>
     <property name="Login" column="indiv_login" not-null="true"/>
     <property name="Password" column="indiv_mdp" not-null="true"/>
-    <property name="AdminRight" column="indiv_admin" not-null="true"/>
 
+    <subclass name="User" discriminator-value="0">
+      <bag name="ComicsOwned" table="bdpossession">
+        <key column="indiv_id"/>
+        <many-to-many class="Album" column="album_id"/>
+      </bag>
+      <bag name="ComicsWanted" table="bdsouhait">
+        <key column="indiv_id"/>
+        <many-to-many class="Album" column="album_id"/>
+      </bag>
+    </subclass>
+    <subclass name="Admin" discriminator-value="1"></subclass>
+    
   </class>  
 
 </hibernate-mapping>

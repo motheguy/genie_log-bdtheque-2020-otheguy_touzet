@@ -16,6 +16,8 @@ namespace Domain
         public virtual string Categorie { get; set; }
         public virtual string Genre { get; set; }
         public virtual string Editeur { get; set; }
+        public virtual List<User> OwnedBy { get; set; }
+        public virtual List<User> WantedBy { get; set; }
 
         public Album() { }
         public Album(int id)
