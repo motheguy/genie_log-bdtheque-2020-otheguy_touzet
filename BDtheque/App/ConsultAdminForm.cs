@@ -7,13 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Domain;
+using DAL;
 
 namespace App
 {
     public partial class ConsultAdminForm : Form
     {
-        public ConsultAdminForm()
+        Individual indiv;
+
+        public ConsultAdminForm(Individual i)
         {
+            indiv = i;
             InitializeComponent();
         }
     }

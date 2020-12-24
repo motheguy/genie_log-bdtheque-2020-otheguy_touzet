@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.connexionGroupBox = new System.Windows.Forms.GroupBox();
+            this.errorLabel = new System.Windows.Forms.Label();
             this.connexionButton = new System.Windows.Forms.Button();
             this.mdpTextBox = new System.Windows.Forms.TextBox();
             this.loginTextBox = new System.Windows.Forms.TextBox();
@@ -37,7 +38,6 @@
             this.adminLabel = new System.Windows.Forms.Label();
             this.mdpLabel = new System.Windows.Forms.Label();
             this.loginLabel = new System.Windows.Forms.Label();
-            this.errorLabel = new System.Windows.Forms.Label();
             this.connexionGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,14 +55,22 @@
             this.connexionGroupBox.Controls.Add(this.loginLabel);
             this.connexionGroupBox.Location = new System.Drawing.Point(27, 28);
             this.connexionGroupBox.Name = "connexionGroupBox";
-            this.connexionGroupBox.Size = new System.Drawing.Size(449, 243);
+            this.connexionGroupBox.Size = new System.Drawing.Size(449, 278);
             this.connexionGroupBox.TabIndex = 0;
             this.connexionGroupBox.TabStop = false;
             this.connexionGroupBox.Text = "Connexion";
             // 
+            // errorLabel
+            // 
+            this.errorLabel.AutoSize = true;
+            this.errorLabel.Location = new System.Drawing.Point(77, 189);
+            this.errorLabel.Name = "errorLabel";
+            this.errorLabel.Size = new System.Drawing.Size(0, 20);
+            this.errorLabel.TabIndex = 8;
+            // 
             // connexionButton
             // 
-            this.connexionButton.Location = new System.Drawing.Point(271, 189);
+            this.connexionButton.Location = new System.Drawing.Point(272, 224);
             this.connexionButton.Name = "connexionButton";
             this.connexionButton.Size = new System.Drawing.Size(120, 29);
             this.connexionButton.TabIndex = 7;
@@ -72,8 +80,10 @@
             // 
             // mdpTextBox
             // 
+            this.mdpTextBox.HideSelection = false;
             this.mdpTextBox.Location = new System.Drawing.Point(239, 142);
             this.mdpTextBox.Name = "mdpTextBox";
+            this.mdpTextBox.PasswordChar = '*';
             this.mdpTextBox.Size = new System.Drawing.Size(153, 26);
             this.mdpTextBox.TabIndex = 6;
             // 
@@ -135,19 +145,11 @@
             this.loginLabel.TabIndex = 0;
             this.loginLabel.Text = "Identifiant :";
             // 
-            // errorLabel
-            // 
-            this.errorLabel.AutoSize = true;
-            this.errorLabel.Location = new System.Drawing.Point(77, 189);
-            this.errorLabel.Name = "errorLabel";
-            this.errorLabel.Size = new System.Drawing.Size(0, 20);
-            this.errorLabel.TabIndex = 8;
-            // 
             // ConnectionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(512, 287);
+            this.ClientSize = new System.Drawing.Size(512, 325);
             this.Controls.Add(this.connexionGroupBox);
             this.Name = "ConnectionForm";
             this.Text = "BDThèque";

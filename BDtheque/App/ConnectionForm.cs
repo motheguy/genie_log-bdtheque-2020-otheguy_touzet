@@ -75,13 +75,13 @@ namespace App
                 {
                     if (i.AdminRight)
                     {
-                        if (i.Login == loginLabel.Text && i.Password == mdpLabel.Text)
+                        if (i.Login == loginTextBox.Text && i.Password == mdpTextBox.Text)
                         {
                             exist = true;
                             individual = i;
-                            ConsultAdminForm adminForm = new ConsultAdminForm();
+                            ConsultAdminForm adminForm = new ConsultAdminForm(individual);
                             adminForm.Show();
-                            this.Close();
+                            this.Hide();
                         }
                     }
                 }
@@ -92,13 +92,13 @@ namespace App
                 {
                     if (i.AdminRight == false)
                     {
-                        if (i.Login == loginLabel.Text && i.Password == mdpLabel.Text)
+                        if (i.Login == loginTextBox.Text && i.Password == mdpTextBox.Text)
                         {
                             exist = true;
                             individual = i;
-                            ConsultUserForm userForm = new ConsultUserForm();
+                            ConsultUserForm userForm = new ConsultUserForm(individual);
                             userForm.Show();
-                            this.Close();
+                            this.Hide();
                         }
                     }
                 }
