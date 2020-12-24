@@ -8,7 +8,7 @@ namespace Domain
 {
     public class User : Individual
     {
-        public new static bool AdminRight = false;
+        //public new static bool AdminRight = false;
         public virtual List<Album> ComicsOwned {get;set;}
         public virtual List<Album> ComicsWanted { get; set; }
 

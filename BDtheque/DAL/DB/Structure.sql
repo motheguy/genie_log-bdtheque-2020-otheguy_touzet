@@ -5,9 +5,9 @@ drop table if exists individu;
 
 create table individu (
     indiv_id integer not null primary key auto_increment,
+    indiv_admin integer not null,
     indiv_login varchar(100) not null,
-    indiv_mdp varchar(100) not null,
-    indiv_admin tinyint(1)
+    indiv_mdp varchar(100) not null
 );
 
 create table album (
@@ -22,7 +22,7 @@ create table album (
 );
 
 create table BDsouhait (
-    souhait_id integer not null primary key auto_increment,
+    --souhait_id integer not null primary key auto_increment,
     indiv_id integer not null,
     constraint fk_indiv_id_souhait foreign key(indiv_id) references individu(indiv_id),
     album_id integer not null,
@@ -30,7 +30,7 @@ create table BDsouhait (
 );
 
 create table BDpossession (
-    possession_id integer not null primary key auto_increment,
+    --possession_id integer not null primary key auto_increment,
     indiv_id integer not null,
     constraint fk_indiv_id_possession foreign key(indiv_id) references individu(indiv_id),
     album_id integer not null,

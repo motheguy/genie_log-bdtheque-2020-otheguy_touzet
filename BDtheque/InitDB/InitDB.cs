@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain
+namespace InitDB
 {
-    public class Admin : Individual
+    public class Class1
     {
-        //public new static bool AdminRight = true;
-
-        public Admin() { }
     }
 }
