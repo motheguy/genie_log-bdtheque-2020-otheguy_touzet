@@ -8,14 +8,13 @@ using System.Threading.Tasks;
 namespace Domain
 {
     ///<summary>
-    /// User and Admin's class parent  
+    /// User and Admin parent class  
     ///</summary>
     public abstract class Individual
     {
         public virtual int Id { get; set; }
         public virtual string Login { get; set; }
         public virtual string Password { get; set; }
-        //protected virtual bool AdminRight {get; }
         public Individual() { }
     }
 }

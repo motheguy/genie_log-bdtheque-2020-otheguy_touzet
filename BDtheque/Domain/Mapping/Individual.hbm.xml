@@ -3,7 +3,7 @@
                    assembly="Domain"
                    namespace="Domain">
 
-  <class name="Individual" table="individu" abstract="true">
+  <class name="Individual" table="individu" abstract="true" discriminator-value="null">
     <id name="Id" column="indiv_id" type="int">
       <generator class="native"></generator>
     </id>

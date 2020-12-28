@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using NHibernate;
 using NHibernate.Cfg;
 using NHibernate.Tool.hbm2ddl;
+using DAL;
+using Domain;
 
 namespace InitDB
 {
@@ -22,19 +24,16 @@ namespace InitDB
             new SchemaExport(cfg).Execute(true, true, false);
 
             //Initialize data for tables
-            //string sqlQuery;
-            //string filePath = Directory.GetCurrentDirectory();
-            //filePath = filePath.Split(new[] {"BDtheque" },StringSplitOptions.None)[0]+ @"BDtheque\DAL\DB\Content.sql";
-            ////Console.WriteLine(filePath);
-            //using (FileStream file = File.OpenRead(filePath))
-            //{
-            //    var reader = new StreamReader(file);
-            //    sqlQuery = reader.ReadToEnd();
-            //}
+            AlbumRepository albumRepo = new AlbumRepository();
+            Album a = new Album("adresse_img", "Astérix et Cléopâtre","Astérix", "René Goscinny, Albert Uderzo","", "humoristique","Dargaud" );
+            albumRepo.Save(a);
 
-            //ISession Session = cfg.Configure().BuildSessionFactory().OpenSession();
-            //Session.CreateSQLQuery(sqlQuery);
-            
+            IndividualRepository indivRepo = new IndividualRepository();
+            Admin i1 = new Admin("motheguy", "1234");
+            User i2 = new User("mtouzet", "mdp");
+            i2.AddComicWanted(a);
+            List<Individual> individuals = new List<Individual> { i1, i2};
+            individuals.ForEach(i => indivRepo.Save(i));
 
             Console.WriteLine("Done!");
             Console.ReadKey();

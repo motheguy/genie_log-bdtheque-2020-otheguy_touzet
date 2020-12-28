@@ -8,11 +8,18 @@ namespace Domain
 {
     public class User : Individual
     {
-        //public new static bool AdminRight = false;
-        public virtual List<Album> ComicsOwned {get;set;}
-        public virtual List<Album> ComicsWanted { get; set; }
+        public virtual IList<Album> ComicsOwned {get;set;}
+        public virtual IList<Album> ComicsWanted { get; set; }
 
-        public User() { }
+        public User() {}
+        public User(string login, string pw)
+        {
+            Login = login;
+            Password = pw;
+            ComicsOwned = new List<Album>();
+            ComicsWanted = new List<Album>();
+        }
+
         public virtual void AddComicOwned(Album newAlbum)
         {
             ComicsOwned.Add(newAlbum);

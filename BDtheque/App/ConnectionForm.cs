@@ -73,7 +73,7 @@ namespace App
             {
                 foreach (Individual i in _individualRepository.GetAll())
                 {
-                    if (i.AdminRight)
+                    if (i is Admin)
                     {
                         if (i.Login == loginTextBox.Text && i.Password == mdpTextBox.Text)
                         {
@@ -90,7 +90,7 @@ namespace App
             {
                 foreach (Individual i in _individualRepository.GetAll())
                 {
-                    if (i.AdminRight == false)
+                    if (i is User)
                     {
                         if (i.Login == loginTextBox.Text && i.Password == mdpTextBox.Text)
                         {

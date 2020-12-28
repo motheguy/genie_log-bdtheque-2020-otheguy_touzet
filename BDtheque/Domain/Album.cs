@@ -16,13 +16,23 @@ namespace Domain
         public virtual string Categorie { get; set; }
         public virtual string Genre { get; set; }
         public virtual string Editeur { get; set; }
-        public virtual List<User> OwnedBy { get; set; }
-        public virtual List<User> WantedBy { get; set; }
+        public virtual IList<User> OwnedBy { get; set; }
+        public virtual IList<User> WantedBy { get; set; }
 
         public Album() { }
         public Album(int id)
         {
             Id = id;
+        }
+        public Album(string img, string nom, string serie, string auteur, string categorie, string genre, string editeur)
+        {
+            Img = img;
+            Nom = nom;
+            Serie = serie;
+            Auteur = auteur;
+            Categorie = categorie;
+            Genre = genre;
+            Editeur = editeur;
         }
         public Album(int id, string img, string nom, string serie, string auteur, string categorie, string genre, string editeur)
         {

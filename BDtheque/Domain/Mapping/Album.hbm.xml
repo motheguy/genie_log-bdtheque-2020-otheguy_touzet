@@ -15,11 +15,11 @@
     <property name="Genre" column="album_genre" />
     <property name="Editeur" column="album_edit" />
 
-    <bag name="OwnedBy" table="bdpossession">
+    <bag name="OwnedBy" inverse="true" table="bdpossession">
       <key column="album_id"/>
       <many-to-many class="Individual" column="indiv_id"/>
     </bag>
-    <bag name="WantedBy" table="bdsouhait">
+    <bag name="WantedBy" inverse="true" table="bdsouhait">
       <key column="album_id"/>
       <many-to-many class="Individual" column="indiv_id"/>
     </bag>

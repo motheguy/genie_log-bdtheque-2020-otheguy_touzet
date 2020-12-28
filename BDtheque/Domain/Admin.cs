@@ -8,8 +8,11 @@ namespace Domain
 {
     public class Admin : Individual
     {
-        //public new static bool AdminRight = true;
-
         public Admin() { }
+        public Admin(string login, string pw) 
+        {
+            Login = login;
+            Password = pw;
+        }
     }
 }

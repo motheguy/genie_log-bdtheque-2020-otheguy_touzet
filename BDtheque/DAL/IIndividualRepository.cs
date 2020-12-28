@@ -10,7 +10,7 @@ namespace DAL
     public interface IIndividualRepository
     {
         /// <summary>
-        /// Return all individualss
+        /// Return all individuals
         /// </summary>
         /// <returns></returns>
         List<Individual> GetAll();

@@ -59,6 +59,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlbumRepository.cs" />
+    <Compile Include="IAlbumRepository.cs" />
     <Compile Include="IIndividualRepository.cs" />
     <Compile Include="IndividualRepository.cs" />
     <Compile Include="Repository.cs" />
