@@ -19,11 +19,18 @@ namespace Domain
         public virtual IList<User> OwnedBy { get; set; }
         public virtual IList<User> WantedBy { get; set; }
 
+        /// <summary>
+        /// Constructor for NHibernate, do no use to initialize an Individual object
+        /// </summary>
         public Album() { }
+
         public Album(int id)
         {
             Id = id;
+            OwnedBy = new List<User>();
+            WantedBy = new List<User>();
         }
+
         public Album(string img, string nom, string serie, string auteur, string categorie, string genre, string editeur)
         {
             Img = img;
@@ -33,6 +40,8 @@ namespace Domain
             Categorie = categorie;
             Genre = genre;
             Editeur = editeur;
+            OwnedBy = new List<User>();
+            WantedBy = new List<User>();
         }
         public Album(int id, string img, string nom, string serie, string auteur, string categorie, string genre, string editeur)
         {
@@ -44,6 +53,22 @@ namespace Domain
             Categorie = categorie;
             Genre = genre;
             Editeur = editeur;
+            OwnedBy = new List<User>();
+            WantedBy = new List<User>();
+        }
+        /// <summary>
+        /// Method to add an User to the list of People who Own the Album
+        /// </summary>
+        public virtual void AddWantedBy(User user)
+        {
+            WantedBy.Add(user);
+        }
+        /// <summary>
+        /// Method to add an User to the list of People who Own the Album
+        /// </summary>
+        public virtual void AddOwnedBy(User user)
+        {
+            OwnedBy.Add(user);
         }
     }
 }
