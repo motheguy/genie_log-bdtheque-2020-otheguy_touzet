@@ -70,5 +70,10 @@ namespace Domain
         {
             OwnedBy.Add(user);
         }
+
+        public override string ToString()
+        {
+            return Nom;
+        }
     }
 }

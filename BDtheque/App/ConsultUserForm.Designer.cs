@@ -36,7 +36,10 @@
             this.rechercheTextBox = new System.Windows.Forms.TextBox();
             this.rechercheButton = new System.Windows.Forms.Button();
             this.decconectionButton = new System.Windows.Forms.Button();
+            this.catalogueListBox = new System.Windows.Forms.ListBox();
+            this.nom = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
+            this.cataloguePage.SuspendLayout();
             this.SuspendLayout();
             // 
             // userLabel
@@ -60,6 +63,8 @@
             // 
             // cataloguePage
             // 
+            this.cataloguePage.Controls.Add(this.nom);
+            this.cataloguePage.Controls.Add(this.catalogueListBox);
             this.cataloguePage.Location = new System.Drawing.Point(4, 29);
             this.cataloguePage.Name = "cataloguePage";
             this.cataloguePage.Padding = new System.Windows.Forms.Padding(3);
@@ -115,6 +120,26 @@
             this.decconectionButton.UseVisualStyleBackColor = true;
             this.decconectionButton.Click += new System.EventHandler(this.deconnectionButton_Click);
             // 
+            // catalogueListBox
+            // 
+            this.catalogueListBox.FormattingEnabled = true;
+            this.catalogueListBox.ItemHeight = 20;
+            this.catalogueListBox.Location = new System.Drawing.Point(25, 17);
+            this.catalogueListBox.Name = "catalogueListBox";
+            this.catalogueListBox.Size = new System.Drawing.Size(142, 304);
+            this.catalogueListBox.TabIndex = 0;
+            this.catalogueListBox.SelectedIndexChanged += new System.EventHandler(this.catalogueListBox_SelectedIndexChanged);
+            // 
+            // nom
+            // 
+            this.nom.AutoSize = true;
+            this.nom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nom.Location = new System.Drawing.Point(367, 17);
+            this.nom.Name = "nom";
+            this.nom.Size = new System.Drawing.Size(0, 20);
+            this.nom.TabIndex = 1;
+            this.nom.Click += new System.EventHandler(this.label1_Click);
+            // 
             // ConsultUserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -128,6 +153,8 @@
             this.Name = "ConsultUserForm";
             this.Text = "BDThèque : Utilisateur";
             this.tabControl.ResumeLayout(false);
+            this.cataloguePage.ResumeLayout(false);
+            this.cataloguePage.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -142,5 +169,7 @@
         private System.Windows.Forms.TextBox rechercheTextBox;
         private System.Windows.Forms.Button rechercheButton;
         private System.Windows.Forms.Button decconectionButton;
+        private System.Windows.Forms.ListBox catalogueListBox;
+        private System.Windows.Forms.Label nom;
     }
 }

@@ -96,7 +96,8 @@ namespace App
                         {
                             exist = true;
                             individual = i;
-                            ConsultUserForm userForm = new ConsultUserForm(individual);
+                            IAlbumRepository albumRepository = new AlbumRepository();
+                            ConsultUserForm userForm = new ConsultUserForm(individual,albumRepository);
                             userForm.Show();
                             this.Hide();
                         }
