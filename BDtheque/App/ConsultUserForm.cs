@@ -35,16 +35,6 @@ namespace App
                 catalogueListBox.SelectedIndex = 0; // Sélectionne le 1er album
         }
 
-        private void toolStripLabel1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void deconnectionButton_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -52,12 +42,17 @@ namespace App
 
         private void catalogueListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            if (catalogueListBox.SelectedItem != null)
+            {
+                Album selectedAlbum = (Album)catalogueListBox.SelectedItem;
+                nomAlbumCatalogue.Text = selectedAlbum.Nom;
+                imageAlbumCatalogue.ImageLocation = "../img/" + selectedAlbum.Id;
+                serieCatalogue.Text = selectedAlbum.Serie;
+                auteurCatalogue.Text = selectedAlbum.Auteur;
+                catCatalogue.Text = selectedAlbum.Categorie;
+                genreCatalogue.Text = selectedAlbum.Genre;
+                editCatalogue.Text = selectedAlbum.Editeur;
+            }
         }
     }
 }
