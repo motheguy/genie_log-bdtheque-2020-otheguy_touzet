@@ -14,16 +14,16 @@ namespace App
 {
     public partial class ConsultUserForm : Form
     {
-        Individual indiv;
+        User user;
         private IAlbumRepository _albumRepository;
 
-        public ConsultUserForm(Individual i, IAlbumRepository albumRepository)
+        public ConsultUserForm(User u, IAlbumRepository albumRepository)
         {
             InitializeComponent();
-            indiv = i;
+            user = u;
             _albumRepository = albumRepository;
             RefreshAlbumListView();
-            userLabel.Text = i.Login;
+            userLabel.Text = user.Login;
         }
 
         private void RefreshAlbumListView()
@@ -33,6 +33,18 @@ namespace App
             catalogueListBox.DataSource = albums;
             if (albums.Count > 0)
                 catalogueListBox.SelectedIndex = 0; // Sélectionne le 1er album
+
+            possessionListBox.DataSource = null;
+            List<Album> possess = _albumRepository.GetPossess(user);
+            possessionListBox.DataSource = possess;
+            if (possess.Count > 0)
+                possessionListBox.SelectedIndex = 0; // Sélectionne le 1er album
+
+            souhaitsListBox.DataSource = null;
+            List<Album> souhaits = _albumRepository.GetSouhait(user);
+            souhaitsListBox.DataSource = souhaits;
+            if (souhaits.Count > 0)
+                souhaitsListBox.SelectedIndex = 0; // Sélectionne le 1er album
         }
 
         private void deconnectionButton_Click(object sender, EventArgs e)
@@ -53,6 +65,81 @@ namespace App
                 genreCatalogue.Text = selectedAlbum.Genre;
                 editCatalogue.Text = selectedAlbum.Editeur;
             }
+        }
+
+        private void possessionListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (possessionListBox.SelectedItem != null)
+            {
+                Album selectedAlbum = (Album)possessionListBox.SelectedItem;
+                nomAlbumPossess.Text = selectedAlbum.Nom;
+                //imageAlbumPossess.ImageLocation = "../img/" + selectedAlbum.Id;
+                seriePossess.Text = selectedAlbum.Serie;
+                auteurPossess.Text = selectedAlbum.Auteur;
+                catPossess.Text = selectedAlbum.Categorie;
+                genrePossess.Text = selectedAlbum.Genre;
+                editPossess.Text = selectedAlbum.Editeur;
+            }
+        }
+
+        private void souhaitsListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (possessionListBox.SelectedItem != null)
+            {
+                Album selectedAlbum = (Album)souhaitsListBox.SelectedItem;
+                nomAlbumSouhait.Text = selectedAlbum.Nom;
+                //imageAlbumSouhait.ImageLocation = "../img/" + selectedAlbum.Id;
+                serieSouhait.Text = selectedAlbum.Serie;
+                auteurSouhait.Text = selectedAlbum.Auteur;
+                catSouhait.Text = selectedAlbum.Categorie;
+                genreSouhait.Text = selectedAlbum.Genre;
+                editSouhait.Text = selectedAlbum.Editeur;
+            }
+        }
+
+        private void cataloguePage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void possessionPage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void souhaitsPage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void achatSouhaitButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void achatCatalogueButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ajoutSouhaitButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rechercheCatalogueButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rechercheSouhaitButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void recherchePossessButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

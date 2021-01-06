@@ -14,6 +14,8 @@ namespace DAL
         /// </summary>
         /// <returns></returns>
         List<Individual> GetAll();
+        List<User> GetUser();
+        List<Admin> GetAdmin();
 
         /// <summary>
         /// Save an individual

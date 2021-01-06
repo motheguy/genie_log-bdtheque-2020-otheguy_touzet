@@ -13,6 +13,8 @@ namespace DAL
         /// Returns all existing albums
         /// </summary>
         List<Album> GetAll();
+        List<Album> GetPossess(User user);
+        List<Album> GetSouhait(User user);
 
         /// <summary>
         /// Save an album

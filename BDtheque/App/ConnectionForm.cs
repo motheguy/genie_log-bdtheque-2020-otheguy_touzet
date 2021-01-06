@@ -68,39 +68,30 @@ namespace App
         private void connexionButton_Click(object sender, EventArgs e)
         {
             bool exist = false;
-            Individual individual;
             if (Admin) //L'individu se connecte en tant qu'administrateur
             {
-                foreach (Individual i in _individualRepository.GetAll())
+                foreach (Admin indiv in _individualRepository.GetAdmin())
                 {
-                    if (i is Admin)
+                    if (indiv.Login == loginTextBox.Text && indiv.Password == mdpTextBox.Text)
                     {
-                        if (i.Login == loginTextBox.Text && i.Password == mdpTextBox.Text)
-                        {
-                            exist = true;
-                            individual = i;
-                            ConsultAdminForm adminForm = new ConsultAdminForm(individual);
-                            adminForm.Show();
-                            this.Hide();
-                        }
+                        exist = true;
+                        ConsultAdminForm adminForm = new ConsultAdminForm(indiv);
+                        adminForm.Show();
+                        this.Hide();
                     }
                 }
             }
             else //L'individu se connecte en tant que simple utilisateur
             {
-                foreach (Individual i in _individualRepository.GetAll())
+                foreach (User indiv in _individualRepository.GetUser())
                 {
-                    if (i is User)
+                    if (indiv.Login == loginTextBox.Text && indiv.Password == mdpTextBox.Text)
                     {
-                        if (i.Login == loginTextBox.Text && i.Password == mdpTextBox.Text)
-                        {
-                            exist = true;
-                            individual = i;
-                            IAlbumRepository albumRepository = new AlbumRepository();
-                            ConsultUserForm userForm = new ConsultUserForm(individual,albumRepository);
-                            userForm.Show();
-                            this.Hide();
-                        }
+                        exist = true;
+                        IAlbumRepository albumRepository = new AlbumRepository();
+                        ConsultUserForm userForm = new ConsultUserForm(indiv, albumRepository);
+                        userForm.Show();
+                        this.Hide();
                     }
                 }
             }

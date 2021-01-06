@@ -14,6 +14,16 @@ namespace DAL
             return Session.Query<Individual>().ToList();
         }
 
+        public List<User> GetUser()
+        {
+            return Session.Query<User>().ToList();
+        }
+
+        public List<Admin> GetAdmin()
+        {
+            return Session.Query<Admin>().ToList();
+        }
+
         public void Save(Individual individual)
         {
             Session.SaveOrUpdate(individual);
