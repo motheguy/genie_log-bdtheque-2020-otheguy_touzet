@@ -101,6 +101,32 @@ namespace DomainTests
 
             Assert.AreEqual(1, count);
         }
+        [TestMethod]
+        // Vérifions que l'utilisateur n'est pas ajouté en doublon dans la liste de gens qui souhaite la BD
+        public void RemoveComicWanted_Test1()
+        {
+            User u = new User("mm1", "mm1");
+            Album a = new Album("adresse_img", "Astérix et Cléopâtre", "Astérix", "René Goscinny, Albert Uderzo", "", "humoristique", "Dargaud");
+            u.AddComicWanted(a);
+            u.RemoveComicWanted(a);
+
+            int count = u.ComicsWanted.Count;
+
+            Assert.AreEqual(0, count);
+        }
+        [TestMethod]
+        // Vérifions que l'utilisateur n'est pas ajouté en doublon dans la liste de gens qui souhaite la BD
+        public void RemoveComicWanted_Test2()
+        {
+            User u = new User("mm1", "mm1");
+            Album a1 = new Album("adresse_img", "Astérix et Cléopâtre", "Astérix", "René Goscinny, Albert Uderzo", "", "humoristique", "Dargaud");
+            Album a2 = new Album("adresse_img", "Astérix et Cléopâtre 2", "Astérix", "René Goscinny, Albert Uderzo", "", "humoristique", "Dargaud");
+            u.AddComicWanted(a1);
+            u.AddComicWanted(a2);
+            u.RemoveComicWanted(a1);
+
+            Assert.AreEqual(u.ComicsWanted[0], a2);
+        }
 
     }
 }
