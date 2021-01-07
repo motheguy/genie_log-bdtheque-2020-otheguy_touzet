@@ -42,6 +42,48 @@ namespace DAL
             return souhait;
         }
 
+        public List<Album> Search(string recherche)
+        {
+            List<Album> albums = Session.Query<Album>().ToList();
+            List<Album> result = new List<Album>();
+            foreach(Album album in albums)
+            {
+                if(album.Nom.Contains(recherche) || album.Serie.Contains(recherche) || album.Auteur.Contains(recherche) || album.Genre.Contains(recherche))
+                {
+                    result.Add(album);
+                }
+            }
+            return result;
+        }
+
+        public List<Album> SearchOwned(User user, string recherche)
+        {
+            List<Album> albums = GetPossess(user);
+            List<Album> result = new List<Album>();
+            foreach (Album album in albums)
+            {
+                if (album.Nom.Contains(recherche) || album.Serie.Contains(recherche) || album.Auteur.Contains(recherche) || album.Genre.Contains(recherche))
+                {
+                    result.Add(album);
+                }
+            }
+            return result;
+        }
+
+        public List<Album> SearchWanted(User user, string recherche)
+        {
+            List<Album> albums = GetSouhait(user);
+            List<Album> result = new List<Album>();
+            foreach (Album album in albums)
+            {
+                if (album.Nom.Contains(recherche) || album.Serie.Contains(recherche) || album.Auteur.Contains(recherche) || album.Genre.Contains(recherche))
+                {
+                    result.Add(album);
+                }
+            }
+            return result;
+        }
+
         public void Save(Album album)
         {
             Session.SaveOrUpdate(album);

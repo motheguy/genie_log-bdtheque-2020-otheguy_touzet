@@ -15,6 +15,9 @@ namespace DAL
         List<Album> GetAll();
         List<Album> GetPossess(User user);
         List<Album> GetSouhait(User user);
+        List<Album> Search(string recherche);
+        List<Album> SearchOwned(User user, string recherche);
+        List<Album> SearchWanted(User user, string recherche);
 
         /// <summary>
         /// Save an album

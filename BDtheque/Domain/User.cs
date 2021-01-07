@@ -58,5 +58,11 @@ namespace Domain
                 newAlbum.AddWantedBy(this);
             }
         }
+
+        public virtual void RemoveComicWanted(Album album)
+        {
+            ComicsWanted.Remove(album);
+            album.RemoveWantedBy(this);
+        }
     }
 }
