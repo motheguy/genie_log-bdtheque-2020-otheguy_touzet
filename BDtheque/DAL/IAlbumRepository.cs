@@ -24,5 +24,10 @@ namespace DAL
         /// </summary>
         /// <param name="album">The album</param>
         void Save(Album album);
+        /// <summary>
+        /// Delete an album
+        /// </summary>
+        /// <param name="album">The album</param>
+        void Delete(Album album);
     }
 }

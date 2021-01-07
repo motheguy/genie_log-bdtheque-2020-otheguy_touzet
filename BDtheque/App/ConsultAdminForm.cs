@@ -50,6 +50,7 @@ namespace App
             if (albums.Count > 0)
                 catalogueListBox.SelectedIndex = 0; // Sélectionne le 1er album
         }
+
         private void deconnectionButton_Click(object sender, EventArgs e)
         {
             connexion.Show();
@@ -84,7 +85,8 @@ namespace App
         }
         private void DelAlbumToMarket_Click(object sender, EventArgs e)
         {
-            
+            Album selectedAlbum = (Album)catalogueListBox.SelectedItem;
+            _albumRepository.Delete(selectedAlbum);
             RefreshAlbumListView();
         }
     }

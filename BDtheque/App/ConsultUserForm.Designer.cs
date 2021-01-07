@@ -49,6 +49,7 @@
             this.nomAlbumCatalogue = new System.Windows.Forms.Label();
             this.catalogueListBox = new System.Windows.Forms.ListBox();
             this.possessionPage = new System.Windows.Forms.TabPage();
+            this.imageAlbumPossess = new System.Windows.Forms.PictureBox();
             this.recherchePossessButton = new System.Windows.Forms.Button();
             this.recherchePossessTextBox = new System.Windows.Forms.TextBox();
             this.nomAlbumPossess = new System.Windows.Forms.Label();
@@ -64,6 +65,8 @@
             this.seriePossessLabel = new System.Windows.Forms.Label();
             this.possessionListBox = new System.Windows.Forms.ListBox();
             this.souhaitsPage = new System.Windows.Forms.TabPage();
+            this.imageAlbumSouhait = new System.Windows.Forms.PictureBox();
+            this.deleteSouhaitButton = new System.Windows.Forms.Button();
             this.rechercheSouhaitButton = new System.Windows.Forms.Button();
             this.rechercheSouhaitTextBox = new System.Windows.Forms.TextBox();
             this.achatSouhaitButton = new System.Windows.Forms.Button();
@@ -80,15 +83,12 @@
             this.nomAlbumSouhait = new System.Windows.Forms.Label();
             this.souhaitsListBox = new System.Windows.Forms.ListBox();
             this.decconectionButton = new System.Windows.Forms.Button();
-            this.deleteSouhaitButton = new System.Windows.Forms.Button();
-            this.imageAlbumPossess = new System.Windows.Forms.PictureBox();
-            this.imageAlbumSouhait = new System.Windows.Forms.PictureBox();
             this.tabControl.SuspendLayout();
             this.cataloguePage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageAlbumCatalogue)).BeginInit();
             this.possessionPage.SuspendLayout();
-            this.souhaitsPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageAlbumPossess)).BeginInit();
+            this.souhaitsPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageAlbumSouhait)).BeginInit();
             this.SuspendLayout();
             // 
@@ -267,17 +267,10 @@
             // imageAlbumCatalogue
             // 
             this.imageAlbumCatalogue.ImageLocation = "";
-<<<<<<< HEAD
-            this.imageAlbumCatalogue.Location = new System.Drawing.Point(444, 55);
-            this.imageAlbumCatalogue.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.imageAlbumCatalogue.Name = "imageAlbumCatalogue";
-            this.imageAlbumCatalogue.Size = new System.Drawing.Size(80, 77);
-=======
             this.imageAlbumCatalogue.Location = new System.Drawing.Point(489, 20);
             this.imageAlbumCatalogue.Name = "imageAlbumCatalogue";
             this.imageAlbumCatalogue.Size = new System.Drawing.Size(108, 155);
             this.imageAlbumCatalogue.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
->>>>>>> d528b043798a7c09ad7903ff6c64911fa3287043
             this.imageAlbumCatalogue.TabIndex = 2;
             this.imageAlbumCatalogue.TabStop = false;
             // 
@@ -327,6 +320,16 @@
             this.possessionPage.TabIndex = 1;
             this.possessionPage.Text = "Mes Albums";
             this.possessionPage.Click += new System.EventHandler(this.possessionPage_Click);
+            // 
+            // imageAlbumPossess
+            // 
+            this.imageAlbumPossess.ImageLocation = "";
+            this.imageAlbumPossess.Location = new System.Drawing.Point(489, 18);
+            this.imageAlbumPossess.Name = "imageAlbumPossess";
+            this.imageAlbumPossess.Size = new System.Drawing.Size(108, 155);
+            this.imageAlbumPossess.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imageAlbumPossess.TabIndex = 26;
+            this.imageAlbumPossess.TabStop = false;
             // 
             // recherchePossessButton
             // 
@@ -480,6 +483,25 @@
             this.souhaitsPage.Text = "Mes Souhaits";
             this.souhaitsPage.Click += new System.EventHandler(this.souhaitsPage_Click);
             // 
+            // imageAlbumSouhait
+            // 
+            this.imageAlbumSouhait.ImageLocation = "";
+            this.imageAlbumSouhait.Location = new System.Drawing.Point(489, 15);
+            this.imageAlbumSouhait.Name = "imageAlbumSouhait";
+            this.imageAlbumSouhait.Size = new System.Drawing.Size(108, 155);
+            this.imageAlbumSouhait.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imageAlbumSouhait.TabIndex = 36;
+            this.imageAlbumSouhait.TabStop = false;
+            // 
+            // deleteSouhaitButton
+            // 
+            this.deleteSouhaitButton.Location = new System.Drawing.Point(333, 85);
+            this.deleteSouhaitButton.Name = "deleteSouhaitButton";
+            this.deleteSouhaitButton.Size = new System.Drawing.Size(129, 56);
+            this.deleteSouhaitButton.TabIndex = 35;
+            this.deleteSouhaitButton.Text = "Supprimer de mes souhaits";
+            this.deleteSouhaitButton.Click += new System.EventHandler(this.deleteSouhaitButton_Click);
+            // 
             // rechercheSouhaitButton
             // 
             this.rechercheSouhaitButton.Location = new System.Drawing.Point(251, 12);
@@ -500,16 +522,9 @@
             // 
             // achatSouhaitButton
             // 
-<<<<<<< HEAD
-            this.achatSouhaitButton.Location = new System.Drawing.Point(176, 95);
-            this.achatSouhaitButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.achatSouhaitButton.Name = "achatSouhaitButton";
-            this.achatSouhaitButton.Size = new System.Drawing.Size(93, 28);
-=======
-            this.achatSouhaitButton.Location = new System.Drawing.Point(189, 108);
+            this.achatSouhaitButton.Location = new System.Drawing.Point(189, 85);
             this.achatSouhaitButton.Name = "achatSouhaitButton";
             this.achatSouhaitButton.Size = new System.Drawing.Size(129, 56);
->>>>>>> d528b043798a7c09ad7903ff6c64911fa3287043
             this.achatSouhaitButton.TabIndex = 6;
             this.achatSouhaitButton.Text = "Acheter";
             this.achatSouhaitButton.Click += new System.EventHandler(this.achatSouhaitButton_Click);
@@ -630,35 +645,6 @@
             this.decconectionButton.UseVisualStyleBackColor = true;
             this.decconectionButton.Click += new System.EventHandler(this.deconnectionButton_Click);
             // 
-            // deleteSouhaitButton
-            // 
-            this.deleteSouhaitButton.Location = new System.Drawing.Point(333, 108);
-            this.deleteSouhaitButton.Name = "deleteSouhaitButton";
-            this.deleteSouhaitButton.Size = new System.Drawing.Size(129, 56);
-            this.deleteSouhaitButton.TabIndex = 35;
-            this.deleteSouhaitButton.Text = "Supprimer de mes souhaits";
-            this.deleteSouhaitButton.Click += new System.EventHandler(this.deleteSouhaitButton_Click);
-            // 
-            // imageAlbumPossess
-            // 
-            this.imageAlbumPossess.ImageLocation = "";
-            this.imageAlbumPossess.Location = new System.Drawing.Point(489, 18);
-            this.imageAlbumPossess.Name = "imageAlbumPossess";
-            this.imageAlbumPossess.Size = new System.Drawing.Size(108, 155);
-            this.imageAlbumPossess.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imageAlbumPossess.TabIndex = 26;
-            this.imageAlbumPossess.TabStop = false;
-            // 
-            // imageAlbumSouhait
-            // 
-            this.imageAlbumSouhait.ImageLocation = "";
-            this.imageAlbumSouhait.Location = new System.Drawing.Point(489, 15);
-            this.imageAlbumSouhait.Name = "imageAlbumSouhait";
-            this.imageAlbumSouhait.Size = new System.Drawing.Size(108, 155);
-            this.imageAlbumSouhait.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imageAlbumSouhait.TabIndex = 36;
-            this.imageAlbumSouhait.TabStop = false;
-            // 
             // ConsultUserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -676,9 +662,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.imageAlbumCatalogue)).EndInit();
             this.possessionPage.ResumeLayout(false);
             this.possessionPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imageAlbumPossess)).EndInit();
             this.souhaitsPage.ResumeLayout(false);
             this.souhaitsPage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imageAlbumPossess)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageAlbumSouhait)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

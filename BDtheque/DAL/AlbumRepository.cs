@@ -89,5 +89,10 @@ namespace DAL
             Session.SaveOrUpdate(album);
             Session.Flush();
         }
+        public void Delete(Album album)
+        {
+            Session.Delete(album);
+            Session.Flush();
+        }
     }
 }

@@ -67,6 +67,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\DAL.dll" />
+    <Content Include="bin\Debug\DAL.pdb" />
     <Content Include="DB\Content.sql" />
     <Content Include="DB\Database.sql" />
     <Content Include="DB\Structure.sql" />
@@ -77,7 +79,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
