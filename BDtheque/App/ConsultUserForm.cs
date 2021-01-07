@@ -16,14 +16,16 @@ namespace App
     {
         User user;
         private IAlbumRepository _albumRepository;
+        Form connexion;
 
-        public ConsultUserForm(User u, IAlbumRepository albumRepository)
+        public ConsultUserForm(User u, IAlbumRepository albumRepository, Form connect)
         {
             InitializeComponent();
             user = u;
             _albumRepository = albumRepository;
             RefreshAlbumListView();
             userLabel.Text = user.Login;
+            connexion = connect;
         }
 
         private void RefreshAlbumListView()
@@ -49,6 +51,7 @@ namespace App
 
         private void deconnectionButton_Click(object sender, EventArgs e)
         {
+            connexion.Show();
             this.Close();
         }
 
