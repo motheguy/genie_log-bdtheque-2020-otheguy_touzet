@@ -16,5 +16,36 @@ namespace App
         {
             InitializeComponent();
         }
+        public string Img { get; set; }
+        public string Nom 
+        {
+            get { return nomTextBox.Text ; }
+            set { nomTextBox.Text = value ; } 
+        }
+        public string Serie 
+        { 
+            get { return serieTextBox.Text ; } 
+            set { serieTextBox.Text = value ;  } 
+        }
+        public string Auteur 
+        {
+            get { return auteurTextBox.Text ; }
+            set { auteurTextBox.Text = value ; }
+        }
+        public string Categorie 
+        { 
+            get { return categorieTextBox.Text ; }
+            set { categorieTextBox.Text = value ; }
+        }
+        public string Genre
+        {
+            get { return genreTextBox.Text ; }
+            set { genreTextBox.Text = value ; }
+        }
+        public string Editeur 
+        {
+            get { return editeurTextBox.Text ; }
+            set { editeurTextBox.Text = value ; } 
+        }
     }
 }

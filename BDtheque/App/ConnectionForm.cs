@@ -15,6 +15,7 @@ namespace App
     public partial class ConnectionForm : Form
     {
         private IIndividualRepository _individualRepository;
+        protected IAlbumRepository albumRepository = new AlbumRepository();
 
         public string Login
         {
@@ -75,7 +76,7 @@ namespace App
                     if (indiv.Login == loginTextBox.Text && indiv.Password == mdpTextBox.Text)
                     {
                         exist = true;
-                        ConsultAdminForm adminForm = new ConsultAdminForm(indiv);
+                        ConsultAdminForm adminForm = new ConsultAdminForm(indiv, albumRepository, this);
                         adminForm.Show();
                         this.Hide();
                     }
@@ -88,7 +89,6 @@ namespace App
                     if (indiv.Login == loginTextBox.Text && indiv.Password == mdpTextBox.Text)
                     {
                         exist = true;
-                        IAlbumRepository albumRepository = new AlbumRepository();
                         ConsultUserForm userForm = new ConsultUserForm(indiv, albumRepository, this);
                         userForm.Show();
                         this.Hide();
