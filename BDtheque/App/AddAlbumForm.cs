@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,7 +17,11 @@ namespace App
         {
             InitializeComponent();
         }
-        public string Img { get; set; }
+        public string Img 
+        {
+            get { return "img/" + Path.GetFileName(imgTextBox.Text); }
+            set { imgTextBox.Text=value; } 
+        }
         public string Nom 
         {
             get { return nomTextBox.Text ; }
@@ -47,5 +52,17 @@ namespace App
             get { return editeurTextBox.Text ; }
             set { editeurTextBox.Text = value ; } 
         }
+
+        private void imgImportButton_Click(object sender, EventArgs e)
+        {
+            imgOpenFileDialog.Title = "Importer une image";
+            //imgOpenFileDialog.ShowDialog();
+            if (imgOpenFileDialog.ShowDialog()==DialogResult.OK)
+            {
+                imgTextBox.Text = imgOpenFileDialog.FileName;
+                File.Copy(imgTextBox.Text, "img/" + Path.GetFileName(imgTextBox.Text));
+            }
+        }
+        
     }
 }
