@@ -64,6 +64,13 @@ namespace Domain
             WantedBy.Add(user);
         }
         /// <summary>
+        /// Method to remove an User from the list of People who Own the Album
+        /// </summary>
+        public virtual void RemoveWantedBy(User user)
+        {
+            WantedBy.Remove(user);
+        }
+        /// <summary>
         /// Method to add an User to the list of People who Own the Album
         /// </summary>
         public virtual void AddOwnedBy(User user)

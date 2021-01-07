@@ -61,7 +61,7 @@ namespace App
             {
                 Album selectedAlbum = (Album)catalogueListBox.SelectedItem;
                 nomAlbumCatalogue.Text = selectedAlbum.Nom;
-                imageAlbumCatalogue.ImageLocation = "../img/" + selectedAlbum.Id;
+                imageAlbumCatalogue.ImageLocation = selectedAlbum.Img;
                 serieCatalogue.Text = selectedAlbum.Serie;
                 auteurCatalogue.Text = selectedAlbum.Auteur;
                 catCatalogue.Text = selectedAlbum.Categorie;
@@ -76,7 +76,7 @@ namespace App
             {
                 Album selectedAlbum = (Album)possessionListBox.SelectedItem;
                 nomAlbumPossess.Text = selectedAlbum.Nom;
-                //imageAlbumPossess.ImageLocation = "../img/" + selectedAlbum.Id;
+                imageAlbumPossess.ImageLocation = selectedAlbum.Img;
                 seriePossess.Text = selectedAlbum.Serie;
                 auteurPossess.Text = selectedAlbum.Auteur;
                 catPossess.Text = selectedAlbum.Categorie;
@@ -87,11 +87,11 @@ namespace App
 
         private void souhaitsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (possessionListBox.SelectedItem != null)
+            if (souhaitsListBox.SelectedItem != null)
             {
                 Album selectedAlbum = (Album)souhaitsListBox.SelectedItem;
                 nomAlbumSouhait.Text = selectedAlbum.Nom;
-                //imageAlbumSouhait.ImageLocation = "../img/" + selectedAlbum.Id;
+                imageAlbumSouhait.ImageLocation = selectedAlbum.Img;
                 serieSouhait.Text = selectedAlbum.Serie;
                 auteurSouhait.Text = selectedAlbum.Auteur;
                 catSouhait.Text = selectedAlbum.Categorie;
@@ -102,47 +102,92 @@ namespace App
 
         private void cataloguePage_Click(object sender, EventArgs e)
         {
-
+            rechercheCatalogueTextBox.Text = "";
+            RefreshAlbumListView();
         }
 
         private void possessionPage_Click(object sender, EventArgs e)
         {
-
+            recherchePossessTextBox.Text = "";
+            RefreshAlbumListView();
         }
 
         private void souhaitsPage_Click(object sender, EventArgs e)
         {
-
+            rechercheSouhaitTextBox.Text = "";
+            RefreshAlbumListView();
         }
 
         private void achatSouhaitButton_Click(object sender, EventArgs e)
         {
-
+            Album selectedAlbum = (Album)souhaitsListBox.SelectedItem;
+            user.AddComicOwned(selectedAlbum);
+            user.RemoveComicWanted(selectedAlbum);
+            RefreshAlbumListView();
+            IndividualRepository indivRepo = new IndividualRepository();
+            indivRepo.Save(user);
         }
 
         private void achatCatalogueButton_Click(object sender, EventArgs e)
         {
-
+            Album selectedAlbum = (Album)catalogueListBox.SelectedItem;
+            user.AddComicOwned(selectedAlbum);
+            if (user.ComicsWanted.Contains(selectedAlbum))
+            {
+                user.RemoveComicWanted(selectedAlbum);
+            }
+            RefreshAlbumListView();
+            IndividualRepository indivRepo = new IndividualRepository();
+            indivRepo.Save(user);
         }
 
         private void ajoutSouhaitButton_Click(object sender, EventArgs e)
         {
+            Album selectedAlbum = (Album)catalogueListBox.SelectedItem;
+            user.AddComicWanted(selectedAlbum);
+            RefreshAlbumListView();
+            IndividualRepository indivRepo = new IndividualRepository();
+            indivRepo.Save(user);
+        }
 
+        private void deleteSouhaitButton_Click(object sender, EventArgs e)
+        {
+            Album selectedAlbum = (Album)souhaitsListBox.SelectedItem;
+            user.RemoveComicWanted(selectedAlbum);
+            RefreshAlbumListView();
+            IndividualRepository indivRepo = new IndividualRepository();
+            indivRepo.Save(user);
         }
 
         private void rechercheCatalogueButton_Click(object sender, EventArgs e)
         {
+            string recherche = rechercheCatalogueTextBox.Text;
+            catalogueListBox.DataSource = null;
+            List<Album> albums = _albumRepository.Search(recherche);
+            catalogueListBox.DataSource = albums;
+            if (albums.Count > 0)
+                catalogueListBox.SelectedIndex = 0; // Sélectionne le 1er album
 
         }
 
         private void rechercheSouhaitButton_Click(object sender, EventArgs e)
         {
-
+            string recherche = rechercheSouhaitTextBox.Text;
+            souhaitsListBox.DataSource = null;
+            List<Album> albums = _albumRepository.SearchWanted(user, recherche);
+            souhaitsListBox.DataSource = albums;
+            if (albums.Count > 0)
+                souhaitsListBox.SelectedIndex = 0; // Sélectionne le 1er album
         }
 
         private void recherchePossessButton_Click(object sender, EventArgs e)
         {
-
+            string recherche = recherchePossessTextBox.Text;
+            possessionListBox.DataSource = null;
+            List<Album> albums = _albumRepository.SearchOwned(user, recherche);
+            possessionListBox.DataSource = albums;
+            if (albums.Count > 0)
+                possessionListBox.SelectedIndex = 0; // Sélectionne le 1er album
         }
     }
 }
