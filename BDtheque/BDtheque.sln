@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InitDB", "InitzDB\InitDB.cs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainTests", "DomainTests\DomainTests.csproj", "{CD24BC8D-A325-423E-A822-E8A5F891C15C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DALTests", "DALTests\DALTests.csproj", "{5946299D-12FF-4271-BB86-2EB2E0DCBA71}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{CD24BC8D-A325-423E-A822-E8A5F891C15C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD24BC8D-A325-423E-A822-E8A5F891C15C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD24BC8D-A325-423E-A822-E8A5F891C15C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5946299D-12FF-4271-BB86-2EB2E0DCBA71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5946299D-12FF-4271-BB86-2EB2E0DCBA71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5946299D-12FF-4271-BB86-2EB2E0DCBA71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5946299D-12FF-4271-BB86-2EB2E0DCBA71}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
