@@ -25,15 +25,15 @@ namespace InitDB
 
             //Initialize data for tables
             AlbumRepository albumRepo = new AlbumRepository();
-            Album a1 = new Album("img/1.jpg", "Astérix et Cléopâtre","Astérix", "René Goscinny, Albert Uderzo","BD", "humoristique", "Hachette Livre");
+            Album a1 = new Album("../../../img/1.jpg", "Astérix et Cléopâtre","Astérix", "René Goscinny, Albert Uderzo","BD", "humoristique", "Hachette Livre");
             albumRepo.Save(a1);
-            Album a2 = new Album("img/2.jpg", "La serpe d'or", "Astérix", "René Goscinny, Albert Uderzo", "BD", "humoristique", "Hachette Livre");
+            Album a2 = new Album("../../../img/2.jpg", "La serpe d'or", "Astérix", "René Goscinny, Albert Uderzo", "BD", "humoristique", "Hachette Livre");
             albumRepo.Save(a2);
-            Album a3 = new Album("img/3.jpg", "Astérix le Gaulois", "Astérix", "René Goscinny, Albert Uderzo", "BD", "humoristique", "Hachette Livre");
+            Album a3 = new Album("../../../img/3.jpg", "Astérix le Gaulois", "Astérix", "René Goscinny, Albert Uderzo", "BD", "humoristique", "Hachette Livre");
             albumRepo.Save(a3);
-            Album a4 = new Album("img/4.jpg", "Objectif Lune", "Tintin", "Hergé", "BD", "aventure", "Casterman");
+            Album a4 = new Album("../../../img/4.jpg", "Objectif Lune", "Tintin", "Hergé", "BD", "aventure", "Casterman");
             albumRepo.Save(a4);
-            Album a5 = new Album("img/5.jpg", "On a marché sur la Lune", "Tintin", "Hergé", "BD", "aventure", "Casterman");
+            Album a5 = new Album("../../../img/5.jpg", "On a marché sur la Lune", "Tintin", "Hergé", "BD", "aventure", "Casterman");
             albumRepo.Save(a5);
 
             IndividualRepository indivRepo = new IndividualRepository();
