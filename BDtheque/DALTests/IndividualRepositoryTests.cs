@@ -22,6 +22,8 @@ namespace DALTests
         [TestMethod()]
         public void GetAllTest()
         {
+            IIndividualRepository indivRepository = new IndividualRepository();
+            indivRepository.
             Assert.Fail();
         }
 
