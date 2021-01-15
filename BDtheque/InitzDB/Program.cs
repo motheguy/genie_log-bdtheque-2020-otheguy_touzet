@@ -41,8 +41,20 @@ namespace InitDB
             albumRepo.Save(a7);
             Album a8 = new Album("../../../img/8.jpg", "Les v'la !", "Boule & Bill", "Jean Roba", "BD", "Enfants", "Dargaud");
             albumRepo.Save(a8);
-            Album a9 = new Album("../../../img/8.jpg", "Quel cirque !", "Boule & Bill", "Laurent Verron", "BD", "Enfants", "Dargaud");
+            Album a9 = new Album("../../../img/9.jpg", "Quel cirque !", "Boule & Bill", "Laurent Verron", "BD", "Enfants", "Dargaud");
             albumRepo.Save(a9);
+            Album a10 = new Album("../../../img/10.jpg", "Persepolis - Tome 1", "Persepolis", "Marjane Satrapi", "BD", "Autobiographie", "L'Association");
+            albumRepo.Save(a10);
+            Album a11 = new Album("../../../img/11.jpg", "Persepolis - Tome 2", "Persepolis", "Marjane Satrapi", "BD", "Autobiographie", "L'Association");
+            albumRepo.Save(a11);
+            Album a12 = new Album("../../../img/12.jpg", "Cap in His Own Magazine at Last!", "Captain America", "Stan Lee, Jack Kirby", "Comic", "Aventure", "Marvel");
+            albumRepo.Save(a12);
+            Album a13 = new Album("../../../img/13.jpg", "When wakes the sleeper!", "Captain America", "Stan Lee, Jack Kirby", "Comic", "Aventure", "Marvel");
+            albumRepo.Save(a13);
+            Album a14 = new Album("../../../img/14.jpg", "The Amazing Spider Man", "Spider-Man", "Humberto Ramos, Ramon Perez, Dan Slott", "Comic", "Aventure", "Marvel");
+            albumRepo.Save(a14);
+            Album a15 = new Album("../../../img/15.jpg", "Polina", "", "Bastien Vivès", "Roman Graphique", "Portrait", "Casterman");
+            albumRepo.Save(a15);
 
             IndividualRepository indivRepo = new IndividualRepository();
             Admin i1 = new Admin("motheguy", "1234");
@@ -51,7 +63,14 @@ namespace InitDB
             User i4 = new User("sbertrand", "abcd");
             i2.AddComicWanted(a1);
             i2.AddComicWanted(a3);
-            i2.AddComicOwned(a5);
+            i2.AddComicOwned(a2);
+            i2.AddComicOwned(a4);
+            i2.AddComicOwned(a11);
+            i4.AddComicWanted(a1);
+            i4.AddComicWanted(a11);
+            i4.AddComicWanted(a15);
+            i4.AddComicOwned(a4);
+            i4.AddComicOwned(a10);
             List<Individual> individuals = new List<Individual> { i1, i2, i3, i4};
             individuals.ForEach(i => indivRepo.Save(i));
 
