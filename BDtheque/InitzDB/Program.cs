@@ -52,7 +52,7 @@ namespace InitDB
             i2.AddComicWanted(a1);
             i2.AddComicWanted(a3);
             i2.AddComicOwned(a5);
-            List<Individual> individuals = new List<Individual> { i1, i2};
+            List<Individual> individuals = new List<Individual> { i1, i2, i3, i4};
             individuals.ForEach(i => indivRepo.Save(i));
 
             Console.WriteLine("Done!");

@@ -20,8 +20,8 @@ namespace DALTests
         {
             this.indivRepository = new IndividualRepository();
             this.u = new User("lundi", "mardi");
-
         }
+
         [TestMethod()]
         public void SaveTest()
         {
@@ -33,29 +33,47 @@ namespace DALTests
         public void GetAllTest()
         {
             int nb = indivRepository.GetAll().Count;
-            Assert.AreEqual(3,nb);
+            Assert.AreEqual(4,nb);
             
         }
+        //[TestMethod()]
+        //public void GetAllTest2()
+        //{
+        //    int nbEx = Session.QueryOver<Individual>().RowCount();
+        //    int nbRe = indivRepository.GetAll().Count;
+        //    Assert.AreEqual(nbEx, nbRe);
+
+        //}
 
         [TestMethod()]
         public void GetUserTest()
         {
-            Assert.Fail();
+            int nb = indivRepository.GetUser().Count;
+            Assert.AreEqual(2,nb);
         }
+
+        //[TestMethod()]
+        //public void GetUserTest2()
+        //{
+        //    int nbEx = Session.QueryOver<User>().RowCount();
+        //    int nbRe = indivRepository.GetUser().Count;
+        //    Assert.AreEqual(nbEx, nbRe);
+        //}
 
         [TestMethod()]
         public void GetAdminTest()
         {
-            Assert.Fail();
+            int nb = indivRepository.GetAdmin().Count;
+            Assert.AreEqual(2, nb);
         }
+
         [TestCleanup]
         public void TestClean()
         {
             string requete = "delete from Individual u where u.Login =?";
-            Session.CreateQuery(requete).SetString(0,u.Login);
+            Session.CreateQuery(requete).SetString(0,u.Login).ExecuteUpdate();
             this.indivRepository = null;
             this.u = null;
         }
-        
     }
 }

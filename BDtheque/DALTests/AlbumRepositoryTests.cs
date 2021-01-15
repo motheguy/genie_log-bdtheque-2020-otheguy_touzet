@@ -14,54 +14,122 @@ using Domain;
 namespace DAL.Tests
 {
     [TestClass()]
-    public class AlbumRepositoryTests
+    public class AlbumRepositoryTests : Repository
     {
+        private IAlbumRepository albumRepository;
+        private Album a;
+        private Album b;
+        private Album c;
+        private Album d;
+        private Album e;
+        private Album p;
+        private Album w;
+        private User u;
+
+        [TestInitialize]
+        public void TestInit()
+        {
+            albumRepository = new AlbumRepository();
+            a = new Album("testa", "test", "test", "test", "test", "test", "test");
+            b = new Album("testb", "test", "test", "test", "test", "test", "test");
+            c = new Album("testc", "test", "test", "test", "test", "test", "test");
+            d = new Album("testd", "test", "test", "test", "test", "test", "test");
+            e = new Album("teste", "test", "test", "test", "test", "test", "test");
+            p = new Album("en possession", "test", "test", "test", "test", "test", "test");
+            w = new Album("en souhait", "test", "test", "test", "test", "test", "test");
+            u = new User("Martin", "malin");
+            
+        }
+
         [TestMethod()]
         public void GetAllTest()
         {
-            Assert.Fail();
+            int nbEx = Session.QueryOver<Album>().RowCount();
+            int nbRe = albumRepository.GetAll().Count;
+            Assert.AreEqual(nbEx, nbRe);
         }
 
         [TestMethod()]
         public void GetPossessTest()
         {
-            Assert.Fail();
+            albumRepository.Save(p);
+            u.AddComicOwned(p);
+            int nb = albumRepository.GetPossess(u).Count;
+            Assert.AreEqual(1,nb);
         }
 
         [TestMethod()]
         public void GetSouhaitTest()
         {
-            Assert.Fail();
+            albumRepository.Save(w);
+            u.ComicsWanted.Add(w) ;
+            int nb = albumRepository.GetSouhait(u).Count;
+            Assert.AreEqual(1, nb);
         }
 
         [TestMethod()]
         public void SearchTest()
         {
-            Assert.Fail();
+            albumRepository.Save(c);
+            bool real = albumRepository.Search("test").Contains(c);
+            Assert.AreEqual(true,real);
         }
 
         [TestMethod()]
         public void SearchOwnedTest()
         {
-            Assert.Fail();
+            albumRepository.Save(d);
+            u.AddComicOwned(d);
+            albumRepository.Save(d);
+            bool real = albumRepository.SearchOwned(u,"test").Contains(d);
+            Assert.AreEqual(true, real);
         }
 
         [TestMethod()]
         public void SearchWantedTest()
         {
-            Assert.Fail();
+            albumRepository.Save(e);
+            u.AddComicWanted(e);
+            albumRepository.Save(e);
+            bool real = albumRepository.SearchWanted(u, "test").Contains(e);
+            Assert.AreEqual(true, real);
         }
 
         [TestMethod()]
         public void SaveTest()
         {
-            Assert.Fail();
+            albumRepository.Save(a);
+            Assert.AreEqual(a,albumRepository.GetAll().Last()) ;
         }
 
         [TestMethod()]
         public void DeleteTest()
         {
-            Assert.Fail();
+            albumRepository.Save(b);
+            albumRepository.Delete(b);
+            bool presence = albumRepository.GetAll().Last()==b;
+            Assert.AreEqual(false,presence);
+        }
+
+        [TestCleanup]
+        public void TestClean()
+        {
+            albumRepository.Delete(a);
+            albumRepository.Delete(c);
+            albumRepository.Delete(d);
+            albumRepository.Delete(e);
+            albumRepository.Delete(p);
+            albumRepository.Delete(w);
+            
+            this.albumRepository = null;
+            this.a = null;
+            this.b = null;
+            this.c = null;
+            this.d = null;
+            this.e = null;
+            this.p = null;
+            this.w = null;
+            this.u = null;
         }
     }
 }
