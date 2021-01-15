@@ -94,6 +94,7 @@
             // 
             // userLabel
             // 
+            this.userLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.userLabel.AutoSize = true;
             this.userLabel.Location = new System.Drawing.Point(29, 24);
             this.userLabel.Name = "userLabel";
@@ -102,14 +103,18 @@
             // 
             // tabControl
             // 
+            this.tabControl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tabControl.Controls.Add(this.cataloguePage);
             this.tabControl.Controls.Add(this.possessionPage);
             this.tabControl.Controls.Add(this.souhaitsPage);
             this.tabControl.Location = new System.Drawing.Point(33, 64);
             this.tabControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabControl.Multiline = true;
             this.tabControl.Name = "tabControl";
+            this.tabControl.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(611, 422);
+            this.tabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl.TabIndex = 2;
             // 
             // cataloguePage
@@ -641,6 +646,7 @@
             // 
             // decconectionButton
             // 
+            this.decconectionButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.decconectionButton.Location = new System.Drawing.Point(282, 509);
             this.decconectionButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.decconectionButton.Name = "decconectionButton";
@@ -659,6 +665,7 @@
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.userLabel);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MinimumSize = new System.Drawing.Size(694, 612);
             this.Name = "ConsultUserForm";
             this.Text = "BDThèque : Utilisateur";
             this.tabControl.ResumeLayout(false);
