@@ -48,7 +48,10 @@ namespace DAL
             List<Album> result = new List<Album>();
             foreach(Album album in albums)
             {
-                if(album.Nom.Contains(recherche) || album.Serie.Contains(recherche) || album.Auteur.Contains(recherche) || album.Genre.Contains(recherche))
+                if(album.Nom.ToLower().Contains(recherche.ToLower()) || 
+                    album.Serie.ToLower().Contains(recherche.ToLower()) ||
+                    album.Auteur.ToLower().Contains(recherche.ToLower()) || 
+                    album.Genre.ToLower().Contains(recherche.ToLower()))
                 {
                     result.Add(album);
                 }
@@ -62,7 +65,10 @@ namespace DAL
             List<Album> result = new List<Album>();
             foreach (Album album in albums)
             {
-                if (album.Nom.Contains(recherche) || album.Serie.Contains(recherche) || album.Auteur.Contains(recherche) || album.Genre.Contains(recherche))
+                if (album.Nom.ToLower().Contains(recherche.ToLower()) || 
+                    album.Serie.ToLower().Contains(recherche.ToLower()) || 
+                    album.Auteur.ToLower().Contains(recherche.ToLower()) || 
+                    album.Genre.ToLower().Contains(recherche.ToLower()))
                 {
                     result.Add(album);
                 }
@@ -76,7 +82,10 @@ namespace DAL
             List<Album> result = new List<Album>();
             foreach (Album album in albums)
             {
-                if (album.Nom.Contains(recherche) || album.Serie.Contains(recherche) || album.Auteur.Contains(recherche) || album.Genre.Contains(recherche))
+                if (album.Nom.ToLower().Contains(recherche.ToLower()) || 
+                    album.Serie.ToLower().Contains(recherche.ToLower()) || 
+                    album.Auteur.ToLower().Contains(recherche.ToLower()) || 
+                    album.Genre.ToLower().Contains(recherche.ToLower()))
                 {
                     result.Add(album);
                 }

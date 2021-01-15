@@ -60,7 +60,7 @@ namespace App
             if (imgOpenFileDialog.ShowDialog()==DialogResult.OK)
             {
                 imgTextBox.Text = imgOpenFileDialog.FileName;
-                File.Copy(imgTextBox.Text, "img/" + Path.GetFileName(imgTextBox.Text));
+                File.Copy(imgTextBox.Text, "../img/" + Path.GetFileName(imgTextBox.Text));
             }
         }
         

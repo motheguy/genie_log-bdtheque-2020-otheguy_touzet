@@ -43,6 +43,9 @@
             // 
             // connexionGroupBox
             // 
+            this.connexionGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.connexionGroupBox.AutoSize = true;
             this.connexionGroupBox.Controls.Add(this.errorLabel);
             this.connexionGroupBox.Controls.Add(this.connexionButton);
@@ -70,6 +73,9 @@
             // 
             // connexionButton
             // 
+            this.connexionButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.connexionButton.Location = new System.Drawing.Point(272, 224);
             this.connexionButton.Name = "connexionButton";
             this.connexionButton.Size = new System.Drawing.Size(120, 29);
@@ -151,6 +157,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(512, 325);
             this.Controls.Add(this.connexionGroupBox);
+            this.MinimumSize = new System.Drawing.Size(534, 381);
             this.Name = "ConnectionForm";
             this.Text = "BDThèque";
             this.connexionGroupBox.ResumeLayout(false);
