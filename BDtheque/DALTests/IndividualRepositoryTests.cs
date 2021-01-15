@@ -1,20 +1,30 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
+using NHibernate;
+using NHibernate.Cfg;
+using NHibernate.Tool.hbm2ddl;
 using DAL;
 using Domain;
 
 namespace DALTests
 {
     [TestClass()]
-    public class IndividualTests
+    public class IndividualTests : Repository
     {
+        private IIndividualRepository indivRepository;
+        private User u;
 
+        [TestInitialize]  
+        public void TestInit()
+        {
+            this.indivRepository = new IndividualRepository();
+            this.u = new User("lundi", "mardi");
+
+        }
         [TestMethod()]
         public void SaveTest()
         {
-            IIndividualRepository indivRepository = new IndividualRepository();
-            User u = new User("lundi", "mardi");
             indivRepository.Save(u);
             Assert.AreEqual(u, indivRepository.GetAll().Last());
         }
@@ -22,9 +32,9 @@ namespace DALTests
         [TestMethod()]
         public void GetAllTest()
         {
-            IIndividualRepository indivRepository = new IndividualRepository();
-            indivRepository.
-            Assert.Fail();
+            int nb = indivRepository.GetAll().Count;
+            Assert.AreEqual(3,nb);
+            
         }
 
         [TestMethod()]
@@ -38,7 +48,14 @@ namespace DALTests
         {
             Assert.Fail();
         }
-
+        [TestCleanup]
+        public void TestClean()
+        {
+            string requete = "delete from Individual u where u.Login =?";
+            Session.CreateQuery(requete).SetString(0,u.Login);
+            this.indivRepository = null;
+            this.u = null;
+        }
         
     }
 }

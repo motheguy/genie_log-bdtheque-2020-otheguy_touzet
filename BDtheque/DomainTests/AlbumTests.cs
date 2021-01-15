@@ -57,7 +57,7 @@ namespace DomainTests
             Assert.AreEqual(0, count);
         }
         [TestMethod]
-        // Vérifions que la première BD dans la liste possédé correspond bien à la BD inséré
+        // Vérifions que la première BD dans la liste souhaité correspond bien à la BD inséré
         public void AddOwnedBy_Test1()
         {
             User u = new User("mm1", "mm1");
@@ -67,7 +67,7 @@ namespace DomainTests
             Assert.AreEqual(u, a.OwnedBy[0]);
         }
         [TestMethod]
-        // Vérifions que la première BD dans la liste possédé correspond bien à la BD inséré
+        // Vérifions que la première BD dans la liste souhaité correspond bien à la BD inséré
         public void AddOwnedBy_Test2()
         {
             User u = new User("mm1", "mm1");
