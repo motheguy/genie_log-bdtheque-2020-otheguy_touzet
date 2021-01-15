@@ -19,15 +19,15 @@ insert into album values (13, '../../../img/13.jpg', "When wakes the sleeper!", 
 insert into album values (14, '../../../img/14.jpg', "The Amazing Spider Man", 'Spider-Man', 'Humberto Ramos, Ramon Perez, Dan Slott', 'Comic','Aventure','Marvel');
 insert into album values (15, '../../../img/15.jpg', "Polina", '', 'Bastien Vivès', 'Roman Graphique','Portrait','Casterman');
 
-insert into bdsouhait values (1, 2, 1);
-insert into bdsouhait values (2, 2, 3);
-insert into bdsouhait values (3, 4, 1);
-insert into bdsouhait values (4, 4, 11);
-insert into bdsouhait values (5, 4, 15);
+insert into bdsouhait values (2, 1);
+insert into bdsouhait values (2, 3);
+insert into bdsouhait values (4, 1);
+insert into bdsouhait values (4, 11);
+insert into bdsouhait values (4, 15);
 
-insert into bdpossession values (1, 2, 2);
-insert into bdpossession values (2, 2, 4);
-insert into bdpossession values (3, 2, 11);
-insert into bdpossession values (1, 4, 4);
-insert into bdpossession values (4, 4, 10);
+insert into bdpossession values ( 2, 2);
+insert into bdpossession values ( 2, 4);
+insert into bdpossession values ( 2, 11);
+insert into bdpossession values ( 4, 4);
+insert into bdpossession values ( 4, 10);
 

@@ -29,15 +29,15 @@ namespace DAL.Tests
         [TestInitialize]
         public void TestInit()
         {
-            albumRepository = new AlbumRepository();
-            a = new Album("testa", "test", "test", "test", "test", "test", "test");
-            b = new Album("testb", "test", "test", "test", "test", "test", "test");
-            c = new Album("testc", "test", "test", "test", "test", "test", "test");
-            d = new Album("testd", "test", "test", "test", "test", "test", "test");
-            e = new Album("teste", "test", "test", "test", "test", "test", "test");
-            p = new Album("en possession", "test", "test", "test", "test", "test", "test");
-            w = new Album("en souhait", "test", "test", "test", "test", "test", "test");
-            u = new User("Martin", "malin");
+            this.albumRepository = new AlbumRepository();
+            this.a = new Album("testa", "test", "test", "test", "test", "test", "test");
+            this.b = new Album("testb", "test", "test", "test", "test", "test", "test");
+            this.c = new Album("testc", "test", "test", "test", "test", "test", "test");
+            this.d = new Album("testd", "test", "test", "test", "test", "test", "test");
+            this.e = new Album("teste", "test", "test", "test", "test", "test", "test");
+            this.p = new Album("en possession", "test", "test", "test", "test", "test", "test");
+            this.w = new Album("en souhait", "test", "test", "test", "test", "test", "test");
+            this.u = new User("Martin", "malin");
             
         }
 

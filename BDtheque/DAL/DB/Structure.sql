@@ -22,7 +22,6 @@ create table album (
 );
 
 create table BDsouhait (
-    --souhait_id integer not null primary key auto_increment,
     indiv_id integer not null,
     constraint fk_indiv_id_souhait foreign key(indiv_id) references individu(indiv_id),
     album_id integer not null,
@@ -30,7 +29,6 @@ create table BDsouhait (
 );
 
 create table BDpossession (
-    --possession_id integer not null primary key auto_increment,
     indiv_id integer not null,
     constraint fk_indiv_id_possession foreign key(indiv_id) references individu(indiv_id),
     album_id integer not null,
