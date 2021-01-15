@@ -239,6 +239,7 @@
             // 
             this.auteurCatalogue.AutoSize = true;
             this.auteurCatalogue.Location = new System.Drawing.Point(295, 215);
+            this.auteurCatalogue.MaximumSize = new System.Drawing.Size(300, 20);
             this.auteurCatalogue.Name = "auteurCatalogue";
             this.auteurCatalogue.Size = new System.Drawing.Size(0, 20);
             this.auteurCatalogue.TabIndex = 6;
@@ -256,6 +257,7 @@
             // 
             this.serieCatalogue.AutoSize = true;
             this.serieCatalogue.Location = new System.Drawing.Point(295, 175);
+            this.serieCatalogue.MaximumSize = new System.Drawing.Size(300, 20);
             this.serieCatalogue.Name = "serieCatalogue";
             this.serieCatalogue.Size = new System.Drawing.Size(0, 20);
             this.serieCatalogue.TabIndex = 4;
