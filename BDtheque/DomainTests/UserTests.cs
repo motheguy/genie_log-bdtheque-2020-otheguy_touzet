@@ -102,7 +102,7 @@ namespace DomainTests
             Assert.AreEqual(1, count);
         }
         [TestMethod]
-        // Vérifions que l'utilisateur n'est pas ajouté en doublon dans la liste de gens qui souhaite la BD
+        // Vérifions que l'utilisateur est supprimé de la liste de gens qui souhaitant la BD
         public void RemoveComicWanted_Test1()
         {
             User u = new User("mm1", "mm1");
@@ -115,7 +115,7 @@ namespace DomainTests
             Assert.AreEqual(0, count);
         }
         [TestMethod]
-        // Vérifions que l'utilisateur n'est pas ajouté en doublon dans la liste de gens qui souhaite la BD
+        // Vérifions que la suppression affecte qu'un seul album de la liste de souhait de l'utilisateur
         public void RemoveComicWanted_Test2()
         {
             User u = new User("mm1", "mm1");
